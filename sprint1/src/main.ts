@@ -81,25 +81,58 @@ function read(){
 }
 
 function handle_sentence(cmd: string){
+    let repl_history = document.getElementsByClassName("history")[0];
+    let repl_output = document.getElementsByClassName("output")[0];
     if (cmd == "mode"){
         if (current_mode == "Brief"){
             current_mode = "Verbose";
-            console.log("changed mode to: Verbose");
+            repl_output.innerHTML += '<p> Command: mode <p>';
+            repl_output.innerHTML += '<p> Output: Mode switched to Verbose <p>';
         }
         else if (current_mode == "Verbose"){
             current_mode = "Brief";
-            console.log("changed mode to: Brief");
+            repl_output.innerHTML += '<p> Mode switched to Brief <p>';
         }
         else{
-            console.log("Illegal mode.");
+            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
         }
-    }else if (cmd == "load_file"){
-        console.log("file loaded");
+        repl_history.innerHTML += '<p> mode <p>';
+    }else if (cmd.substring(0, 9) == "load_file"){
+        if (current_mode == "Brief"){
+            repl_output.innerHTML += '<p> CSV file successfully loaded. <p>';
+        }
+        else if (current_mode == "Verbose"){
+            repl_output.innerHTML += '<p> Command: <p>' + cmd;
+            repl_output.innerHTML += '<p> Output: CSV file successfully loaded. <p>';
+        }
+        else{
+            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
+        }
+        repl_history.innerHTML += cmd;
     }else if(cmd == "view"){
-        console.log("view");
-    }else if (cmd == "search"){
-        let repl_history = document.getElementsByClassName("history")[0];
-        repl_history.innerHTML += '<p> Value <p>';
+        if (current_mode == "Brief"){
+            repl_output.innerHTML += '<p> HTML Table awaiting to be implemented. <p>';
+        }
+        else if (current_mode == "Verbose"){
+            repl_output.innerHTML += '<p> Command: view <p>';
+            repl_output.innerHTML += '<p> Output: HTML Table awaiting to be implemented. <p>';
+        }
+        else{
+            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
+        }
+        repl_history.innerHTML += '<p> view <p>';
+    }else if (cmd.substring(0, 6) == "search"){
+        if (current_mode == "Brief"){
+            repl_output.innerHTML += '<p> HTML Table search awaiting to be implemented. <p>';
+        }
+        else if (current_mode == "Verbose"){
+            repl_output.innerHTML += '<p> Command: <p>' + cmd;
+            repl_output.innerHTML += '<p> Output: HTML Table search awaiting to be implemented. <p>';
+        }
+        else{
+            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
+        }
+        repl_history.innerHTML += cmd;
     }
 }
 // Provide this to other modules (e.g., for testing!)

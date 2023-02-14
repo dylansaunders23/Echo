@@ -44,3 +44,9 @@ BODY{
     color:black;
     font-weight: smaller;
 }
+.output{
+    margin: auto;
+    font-size: 15px;
+    color:brown;
+    font-weight: smaller;
+}

@@ -1,70 +1,107 @@
 
 // The window.onload callback is invoked when the window is first loaded by the browser
 window.onload = () => {    
-    prepareSubmitPress()    
-    prepareButtonPress()
+    prepareinput();
+    prepareSubmitPress();  
     // If you're adding an event for a button click, do something similar.
     // The event name in that case is "click", not "keypress", and the type of the element 
     // should be HTMLButtonElement. The handler function for a "click" takes no arguments.
-    console.log("Hi")
+}
+
+let current_mode = "Brief";
+
+// function prepareCommand(){
+//     const maybeInputs: null | HTMLCollectionOf<Element> = document.getElementsByClassName('repl-command-box')
+//     if (maybeInputs == null){
+//         return ("Couldn't find input element")
+//     }else {
+//         maybeInputs.addEventListener("keypress", handleKeypress)
+//     }
+// }
+function prepareinput(){
+    const input = document.getElementsByClassName("repl-command-box")[0];
+    if(input == null) {
+        console.log("Couldn't find input element");
+    } else if(!(input instanceof HTMLInputElement)) {
+        console.log(`Found element ${input}, but it wasn't an input`);
+    } else {
+        // Notice that we're passing *THE FUNCTION* as a value, not calling it.
+        // The browser will invoke the function when a key is pressed with the input in focus.
+        //  (This should remind you of the strategy pattern things we've done in Java.)
+        input.addEventListener('keydown', (e) => {
+            if (e.key == "Enter"){
+                read();
+            }
+        });
+    }
 }
 
 function prepareSubmitPress() {
     // As far as TypeScript knows, there may be *many* elements with this class.
-    const maybeInputs: HTMLCollectionOf<Element> = document.getElementsByClassName('repl-command-box')
+    const maybeInputs: HTMLCollectionOf<Element> = document.getElementsByClassName("enter-command");
     // Assumption: there's only one thing
-    const maybeInput: Element | null = maybeInputs.item(0)
+    const maybeInput: Element | null = maybeInputs[0];
     // Is the thing there? Is it of the expected type? 
     //  (Remember that the HTML author is free to assign the repl-input class to anything :-) )
-    if(maybeInputs == null) {
-        console.log("Couldn't find input element")
-    } else if(!(maybeInputs instanceof HTMLInputElement)) {
-        console.log(`Found element ${maybeInput}, but it wasn't an input`)
+    if(maybeInput == null) {
+        console.log("Couldn't find input element");
+    } else if(!(maybeInput instanceof HTMLButtonElement)) {
+        console.log(`Found element ${maybeInput}, but it wasn't an input`);
     } else {
         // Notice that we're passing *THE FUNCTION* as a value, not calling it.
         // The browser will invoke the function when a key is pressed with the input in focus.
         //  (This should remind you of the strategy pattern things we've done in Java.)
-        maybeInputs.addEventListener("keypress", handleKeypress);
-    }
-}
-function prepareButtonPress(){
-    const maybeButtons: HTMLCollectionOf<Element> = document.getElementsByClassName('repl-button')
-    const maybeButton: Element | null = maybeButtons.item(0)
-    // Is the thing there? Is it of the expected type? 
-    //  (Remember that the HTML author is free to assign the repl-input class to anything :-) )
-    if(maybeButton == null) {
-        console.log("Couldn't find input element")
-    } else if(!(maybeButton instanceof HTMLInputElement)) {
-        console.log(`Found element ${maybeButton}, but it wasn't an input`)
-    } else {
-        // Notice that we're passing *THE FUNCTION* as a value, not calling it.
-        // The browser will invoke the function when a key is pressed with the input in focus.
-        //  (This should remind you of the strategy pattern things we've done in Java.)
-        maybeButton.addEventListener("mousedown", handleButtonClick);
+        maybeInput.addEventListener("click", handleButtonClick);
     }
 }
 
 // We'll use a global state reference for now
-let pressCount = 0
-function getPressCount() {
-    return pressCount
-}
+let enteredString = ""
+// function getPressCount() {
+//     return pressCount
+// }
 
-let clickCount = 0;
-function getClickCount(){
-    return clickCount
-}
-function handleButtonClick(event: MouseEvent){
-    clickCount += 1
-    console.log(`A click has occurred. `)
-}
-
-function handleKeypress(event: KeyboardEvent) {    
+function handleButtonClick(event: MouseEvent) {   
     // The event has more fields than just the key pressed (e.g., Alt, Ctrl, etc.)
-    if (event == "view")
-    console.log(`key pressed: ${event.key}. ${getPressCount()} presses seen so far.`)
+    read();
 }
 
+function read(){
+    const newcommand = document.getElementsByClassName("repl-command-box")[0];
+    if (newcommand == null){
+        console.log("Couldn't find input element");
+    }
+    else if (!(newcommand instanceof HTMLInputElement)){
+        console.log(`Found element ${newcommand}, but it wasn't an input`)
+    }
+    else{
+        handle_sentence(newcommand.value);
+    }
+    // console.log(`key pressed: ${event.key}. ${getPressCount()} presses seen so far.`)
+}
+
+function handle_sentence(cmd: string){
+    if (cmd == "mode"){
+        if (current_mode == "Brief"){
+            current_mode = "Verbose";
+            console.log("changed mode to: Verbose");
+        }
+        else if (current_mode == "Verbose"){
+            current_mode = "Brief";
+            console.log("changed mode to: Brief");
+        }
+        else{
+            console.log("Illegal mode.");
+        }
+    }else if (cmd == "load_file"){
+        console.log("file loaded");
+    }else if(cmd == "view"){
+        console.log("view");
+    }else if (cmd == "search"){
+        let repl_history = document.getElementsByClassName("history")[0];
+        repl_history.innerHTML += '<p> Value <p>';
+    }
+}
 // Provide this to other modules (e.g., for testing!)
 // The configuration in this project will require /something/ to be exported.
-export {handleKeypress, prepareKeypress, prepareButtonPress, handleButtonClick, getPressCount, getClickCount}
+export { handleButtonClick };

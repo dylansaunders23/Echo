@@ -34,7 +34,13 @@ BODY{
     margin: auto; 
     display: block;
 }
-.mode-select{
+.enter-command{
     margin: auto;
     display: block;
+}
+.history{
+    margin: auto;
+    font-size: 10px;
+    color:black;
+    font-weight: smaller;
 }

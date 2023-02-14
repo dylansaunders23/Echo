@@ -19,30 +19,22 @@
         <!-- Prepare a region of the page to hold the command history -->
         <div class="repl-history">  
             <label for = "name">
-                History:
-            </label>          
-            <input type = "text" id = "name" name = "name" 
-            required
-                minlength = "4" maxlength = "8" size = "10">
-            <input type = "button">
-            <!-- <button class -->
+                History:         
+            <div class = "history">
+                
+            </div>
+            
         </div>
         <hr>
         <div class="repl-history">  
             <label for = "name">
                 Data:
-            </label>          
-            <input type = "text" id = "name" name = "name" 
-            required
-                minlength = "4" maxlength = "8" size = "10">
-            <input type = "button">
-            <!-- <button class -->
         </div>
         <hr>
         <!-- Prepare a region of the page to hold the command input box -->
         <div class="repl-input">
             <input type="text" placeholder = "Enter command here!" class="repl-command-box">
-            <button type = "button" class = "mode-select">Submit</button>
+            <button type = "button" class = "enter-command">Submit</button>
         </div>
     </div>
     <!-- Load the script! Note: the .js extension is because browsers don't use TypeScript

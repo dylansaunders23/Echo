@@ -10,7 +10,7 @@
 }
 
 .repl-history {      
-    height:40vh; 
+    height:85vh; 
     margin: auto;
     display: block;
     overflow: scroll;  
@@ -26,7 +26,6 @@
     display: block;
 }
 BODY{
-    color: red;
     font-size: 32px;
     font-weight: smaller;
 }
@@ -40,13 +39,11 @@ BODY{
 }
 .history{
     margin: auto;
-    font-size: 10px;
-    color:black;
+    font-size: 15px;
     font-weight: smaller;
 }
 .output{
     margin: auto;
     font-size: 15px;
-    color:brown;
     font-weight: smaller;
 }

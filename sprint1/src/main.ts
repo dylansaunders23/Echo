@@ -1,4 +1,5 @@
-
+import * as mockData from "./mockFiles/mockCSV.js"
+import { csvFile as csvFile } from "./mockFiles/mockCSV.js";
 // The window.onload callback is invoked when the window is first loaded by the browser
 window.onload = () => {    
     prepareinput();
@@ -60,6 +61,7 @@ let enteredString = ""
 // function getPressCount() {
 //     return pressCount
 // }
+let file: csvFile | undefined;
 
 function handleButtonClick(event: MouseEvent) {   
     // The event has more fields than just the key pressed (e.g., Alt, Ctrl, etc.)
@@ -98,12 +100,27 @@ function handle_sentence(cmd: string){
         }
         repl_history.innerHTML += '<p> mode <p>';
     }else if (cmd.substring(0, 9) == "load_file"){
+        var filename = cmd.split(" ");
+        var output = "";
+        if (filename.length != 2) {
+           output = "Invalid number of inputs";
+        }
+        else{
+            file = mockData.mockFilepaths.get(filename[1]);
+            if (file == undefined) {
+                output = "Filepath not found";
+            }
+            else{
+                output = "CSV file loaded successfully";
+            }
+        }
+
         if (current_mode == "Brief"){
-            repl_output.innerHTML += '<p> CSV file successfully loaded. <p>';
+            repl_output.innerHTML += '<p>' + output + '<p>';
         }
         else if (current_mode == "Verbose"){
-            repl_output.innerHTML += '<p> Command: <p>' + cmd;
-            repl_output.innerHTML += '<p> Output: CSV file successfully loaded. <p>';
+            repl_output.innerHTML += '<p> Command: ' + cmd + '<p>';
+            repl_output.innerHTML += '<p> Output: ' + output + '<p>';
         }
         else{
             repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
@@ -138,3 +155,4 @@ function handle_sentence(cmd: string){
 // Provide this to other modules (e.g., for testing!)
 // The configuration in this project will require /something/ to be exported.
 export { handleButtonClick };
+

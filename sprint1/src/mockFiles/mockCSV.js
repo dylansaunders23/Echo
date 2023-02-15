@@ -1,5 +1,5 @@
 var favoriteStudents = {
-    areHeaders: true,
+    hasHeaders: true,
     header: ["Name", "Year", "Concentration", "Hometown"],
     contents: [
         ["Owen", "2", "CS", "Cleveland"],

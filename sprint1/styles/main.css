@@ -10,7 +10,7 @@
 }
 
 .repl-history {      
-    height:85vh; 
+    height: 85vh; 
     margin: auto;
     display: block;
     overflow: scroll;  

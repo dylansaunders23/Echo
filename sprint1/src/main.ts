@@ -56,15 +56,9 @@ function prepareSubmitPress() {
     }
 }
 
-// We'll use a global state reference for now
-let enteredString = ""
-// function getPressCount() {
-//     return pressCount
-// }
 let file: csvFile | undefined;
 
 function handleButtonClick(event: MouseEvent) {   
-    // The event has more fields than just the key pressed (e.g., Alt, Ctrl, etc.)
     read();
 }
 
@@ -79,29 +73,24 @@ function read(){
     else{
         handle_sentence(newcommand.value);
     }
-    // console.log(`key pressed: ${event.key}. ${getPressCount()} presses seen so far.`)
 }
 
 function handle_sentence(cmd: string){
-    let repl_history = document.getElementsByClassName("history")[0];
     let repl_output = document.getElementsByClassName("output")[0];
+    let repl_header = document.getElementsByClassName("header")[0];
+    let repl_view = document.getElementsByClassName("file-content")[0];
+    var output = "";
     if (cmd == "mode"){
         if (current_mode == "Brief"){
             current_mode = "Verbose";
-            repl_output.innerHTML += '<p> Command: mode <p>';
-            repl_output.innerHTML += '<p> Output: Mode switched to Verbose <p>';
+            output = "Mode switched to Verbose. ";
         }
         else if (current_mode == "Verbose"){
             current_mode = "Brief";
-            repl_output.innerHTML += '<p> Mode switched to Brief <p>';
+            output =  "Mode switched to Brief. ";
         }
-        else{
-            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
-        }
-        repl_history.innerHTML += '<p> mode <p>';
     }else if (cmd.substring(0, 9) == "load_file"){
         var filename = cmd.split(" ");
-        var output = "";
         if (filename.length != 2) {
            output = "Invalid number of inputs";
         }
@@ -114,42 +103,56 @@ function handle_sentence(cmd: string){
                 output = "CSV file loaded successfully";
             }
         }
-
-        if (current_mode == "Brief"){
-            repl_output.innerHTML += '<p>' + output + '<p>';
-        }
-        else if (current_mode == "Verbose"){
-            repl_output.innerHTML += '<p> Command: ' + cmd + '<p>';
-            repl_output.innerHTML += '<p> Output: ' + output + '<p>';
-        }
-        else{
-            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
-        }
-        repl_history.innerHTML += cmd;
     }else if(cmd == "view"){
-        if (current_mode == "Brief"){
-            repl_output.innerHTML += '<p> HTML Table awaiting to be implemented. <p>';
-        }
-        else if (current_mode == "Verbose"){
-            repl_output.innerHTML += '<p> Command: view <p>';
-            repl_output.innerHTML += '<p> Output: HTML Table awaiting to be implemented. <p>';
+        var output = "";
+        var header = "";
+        var rows = "";
+        if (file == undefined){
+            output = "No CSV file stored yet.";
         }
         else{
-            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
+            if (file.hasHeaders){
+                //repl_header.innerHTML += file.header;
+               header += '<br><th>' + file.header + '</th></br>';
+               //header += file.header;
+            }
+            var r = 0;
+            while (r < file.contents.length){
+               rows += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
+               //rows += file.contents[r] ;
+               r ++;
+            }
+            output += header + rows;
         }
-        repl_history.innerHTML += '<p> view <p>';
     }else if (cmd.substring(0, 6) == "search"){
-        if (current_mode == "Brief"){
-            repl_output.innerHTML += '<p> HTML Table search awaiting to be implemented. <p>';
-        }
-        else if (current_mode == "Verbose"){
-            repl_output.innerHTML += '<p> Command: <p>' + cmd;
-            repl_output.innerHTML += '<p> Output: HTML Table search awaiting to be implemented. <p>';
+        var input = cmd.split(" ");
+        var output = "";
+        if (input.length != 3) {
+           output = "Invalid number of inputs";
         }
         else{
-            repl_output.innerHTML += '<p> ERROR: Illegal Mode <p>';
+            var column = input[1];
+            var value = input[2];
+            if (file == undefined){
+                output = "No CSV file stored yet.";
+            }else{
+                var r = 0;
+                while (r < file.contents.length){
+                    output += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
+                    r ++;
+                }
+            }
         }
-        repl_history.innerHTML += cmd;
+    }
+    if (current_mode == "Brief"){
+        repl_output.innerHTML += '<p>' + output + '</p>';
+    }
+    else if (current_mode == "Verbose"){
+        repl_output.innerHTML += '<p> Command: ' + cmd + '</p>';
+        repl_output.innerHTML += '<p> Output: ' + output + '</p>';
+    }
+    else{
+        repl_output.innerHTML += '<p> ERROR: Illegal Mode </p>';
     }
 }
 // Provide this to other modules (e.g., for testing!)

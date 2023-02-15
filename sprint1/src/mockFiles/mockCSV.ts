@@ -1,11 +1,11 @@
 type csvFile = {
-  areHeaders: boolean;
+  hasHeaders: boolean;
   header: string[];
   contents: string[][];
 };
 
 const favoriteStudents: csvFile = {
-  areHeaders: true,
+  hasHeaders: true,
   header: ["Name", "Year", "Concentration", "Hometown"],
   contents: [
     ["Owen", "2", "CS", "Cleveland"],

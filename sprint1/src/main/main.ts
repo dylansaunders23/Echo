@@ -1,5 +1,5 @@
-import * as mockData from "./mockFiles/mockCSV.js"
-import { csvFile as csvFile } from "./mockFiles/mockCSV.js";
+import * as mockData from "../mockFiles/mockedJson.js"
+import { csvFile as csvFile } from "../mockFiles/mockedJson.js";
 
 // prepare entered command and submit button
 window.onload = () => {    
@@ -61,6 +61,7 @@ function read(){
     }
 }
 
+const output = "";
 function handle_sentence(cmd: string){
     let repl_output = document.getElementsByClassName("output")[0];
     var output = "";
@@ -143,5 +144,5 @@ function handle_sentence(cmd: string){
         repl_output.innerHTML += '<p> ERROR: Illegal Mode </p>';
     }
 }
-export { handleButtonClick };
+export { handleButtonClick, handle_sentence };
 

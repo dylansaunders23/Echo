@@ -4,21 +4,30 @@
   give you this starter CSS. Feel free to modify it as you wish, though.
 */
 
+html{
+    background-color:bisque;
+}
 .repl {
     position:relative;
-    min-height:95vh;    
+    min-height:95vh;  
+    background-color:bisque;
 }
 
 .repl-history {      
     height: 85vh; 
     margin: auto;
     display: block;
-    overflow: scroll;  
+    overflow: scroll; 
+    font-style: italic;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:maroon; 
 }
 
 .repl-input {        
     margin: auto;    
     height:10vh;
+    background-color:lightskyblue;
 }
 .repl-command-box {
     width: 90%;            
@@ -26,7 +35,7 @@
     display: block;
 }
 BODY{
-    font-size: 32px;
+    font-size: 35px;
     font-weight: smaller;
 }
 .repl-button{
@@ -44,6 +53,8 @@ BODY{
 }
 .output{
     margin: auto;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: smaller;
+    font-family:'Courier New', Courier, monospace;
+    color: black;
 }

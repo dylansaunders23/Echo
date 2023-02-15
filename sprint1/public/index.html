@@ -16,44 +16,16 @@
     <noscript>This example requires JavaScript to run.</noscript>
     <!-- Prepare a region of the page to hold the entire REPL interface -->
     <div class="repl">
-        <!-- Prepare a region of the page to hold the command history -->
-        <!-- <div class="repl-history">  
-            <label for = "name">
-                History:         
-            <div class = "history">
-
-            </div>
-            
-        </div>
-        <hr>-->
         <div class="repl-history">  
             <label for = "name">
                 Echo:
             <div class = "output">
                 
             </div>
-            <div class = "table">
-            <table width = 100%>
-                <tbody>
-                    <th>
-                        <p>
-                            <span class = "header"></span>
-                        </p>
-                    </th>
-                    <tr>
-                        <td>
-                            <p>
-                                <span class = "file-content"></span>
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
         </div>
+        <div class="repl-input">
         <hr>
         <!-- Prepare a region of the page to hold the command input box -->
-        <div class="repl-input">
             <input type="text" placeholder = "Enter command here!" class="repl-command-box">
             <button type = "button" class = "enter-command">Submit</button>
         </div>

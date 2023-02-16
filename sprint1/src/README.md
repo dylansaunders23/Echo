@@ -1,0 +1,119 @@
+# Documentation
+## Project Details
+- **Project Name**: 
+    - Echo
+- **Team members and contributions**: 
+    - *wfu16*: 
+        - contributed to printing the commands and outputs on the webpage rather than the console
+        - implemented the "mode" command
+        - contributed to the output in the form of HTML table
+        - together implemented the "view" and "search" commands
+        - designed the overall look of the webpage
+        - together wrote the documentation
+    - *dsaunde2*:
+        - proposed the overall layout of the webpage
+        - created the mocked csv typescipt files
+        - created the hashmaps
+        - implemented the "load_file" command
+        - together implemented the "view" and "search" commands
+        - together wrote the documentation
+- **Total estimated time**:
+    - 10 hours
+- A link to [our repo](https://github.com/dylansaunders23/Echo)
+
+## Design Choices
+- **Main Directory**
+    - *main.ts*
+        - imports mocked data amd the type csvFile from mockedJson.js, so that matching mocked data with file paths can be more easily achieved
+        - when the webpage is loaded, the input box and the submit button are both prepared
+        - the default mode is "Brief", which means that by default, the output will not contain the command entered by the user
+        - the variable file is either of type csvFile or undefined
+        - *prepareinput()*
+            - This is the first way the user can submit their commad: by pressing the key "Enter"
+            - if the input at the command box is null, then the console will return "Couldn't find input element"
+            - if the input at the command box is not an HTMLInputElement, then the console will return "Found element xxx, but it wasn't an input"
+            - if the input at the command box is a valid input, then if the user presses "Enter", the input command will be read by the function read()
+        - *prepareSubmitPress()*
+            - This is the second way the user can submit their command: by pressing the button "Submit"
+            - if the situation of whether the Submit button is pressed is null, then the console will return "Couldn't find input element"
+            - if the situation of whether the Submit button is pressed is not an HTMLButtonElement, then the console will return "Found element xxx, but it wasn't an input"
+            - if the Submit button is clicked, then the input command will be handled by the function handleButtonClick()
+        - *handleButtonClick*
+            - input: a MouseEvent
+            - output: calls the function read()
+        - *read()*
+            - if the input at the command box is null, then the console will return "Couldn't find input element"
+            - if the input at the command box is not an HTMLInputElement, then the console will return "Found element xxx, but it wasn't an input"
+            - if the input at the command box is a valid input, then the input will be directly handled by handle_sentence
+        - *handle_sentence*
+            - input: the command string
+            - User Story 1: The command is "mode". The mode will be switched between "Brief" and "Verbose". In the first case, the output will only be the output of the command. In the second case, the output will include both the command itself and the actual output.
+            - User Story 2: The command is "load_file". 
+                - If the input command doesn't consist of exactly two strings, then the output will be "Invalid number of inputs." 
+                - If the file path entered by the user is not valid, then the output will be "Filepath not found."
+                - If the file path is valid, then the output will be "CSV file loaded successfully". 
+            - User Story 3: The command is "view".
+                - If the variable file is undefined, then the output will be "No CSV file stored yet."
+                - If the hasHeaders field of the file is true, then a header row will be created for the HTML table.
+                - Rows of HTML table are created for rows of data in the csv file. Because we are not supposed to implement the parser function we did in the previous sprint CSV, we are just returning the rows as they are originally in the csv files.
+            - User Story 4: The command is "search". 
+                - If the input command doesn't consist of exactly three strings, then the output will be "Invalid number of inputs."
+                - If the variable file is undefined, then the output will be "No CSV file stored yet."
+                - Since we are not supposed to implement the back-end search function we did in the previous sprint csv, we are just returning the rows as they are originally in the csv files, always excluding the headers. 
+            - Whether the command is returned along with the output is determined by whether the current mode is "Brief" or "Verbose". 
+    - *main.js*
+        - Javascript file equivalent to main.ts that is compiled for the webpage.
+- **mockFiles Directory** 
+    - *mokedJson.ts*
+        - It is a typescript file containing mocked csv data sets. 
+        - The type csvFile is created in order to facilitate the use of hashmap between csv datasets and mocked file paths.It has three fields:
+            - hasHeaders
+                - boolean
+                - represents whether the csv File has column headers
+            - header
+                - String Array
+                - empty if the csv File has no column headers
+                - contains the headers of the csv File if it has column headers
+            - contents
+                - 2D String Array
+                - empty if the csv File is empty
+                - contains the rows of the csv File if it is not empty
+        - It contains 4 mocked csv files. Two of them have headers, and two of them don't. Two of them have empty contents, and two of them don't. 
+        - A hashmap has been created between the csv data files and mocked file paths. 
+    - *mockedJson.js*
+        - Javascript file equivalent to mockedJson.ts
+- **tests Directory**
+    - *main.test.ts*
+        - Explained in depth by the following section "Tests". 
+    - *main.test.js*
+        - Javascript file equivalent to main.test.ts
+- **public**
+    - *index.html*
+        - The class with the widest scope is "repl".
+        - The main page where the output will be shown is defined to be in the class "repl-history". It has an initial title of "Echo". The later outputs from commands entered by the user will be shown under this title. 
+        - At the bottom of the webpage will be another section for user input and interaction. 
+            - The command box is in the class "repl-command-box", where there's a placeholder "Enter command here!" The user is expected to enter their command in this box.
+            - The submit button is in the class "enter-command". The user can press this button to submit their command. 
+- **styles**
+    - *main.css*
+        - html
+            - The background color of the whole webpage is set to be bisque. 
+        - .repl-history
+            - The height of the section is set to be 85 vh. This allows the page to be scrollable when the number of commands increase. 
+            - The font of the word "ECHO" is set to be italicized and bold, and the color is set to be maroon. 
+        - .repl-input
+            - The background color of the command section is set to be lightskyblue to distinguish from the more general background. 
+        - BODY
+            - The font size of the body is set to be 35 px.
+            - The font weight is set to be smaller.
+        - .enter-command
+            -  The Submit button is moved to the horizontal center of the page. 
+        - .output
+            - The output sentences are set to be black, with font size 18 px. 
+            - The output is set to be the font-family Courier New. 
+## Errors/Bugs
+- We currently don't have any errors or bugs. 
+
+## Tests
+
+        

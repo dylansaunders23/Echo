@@ -19,6 +19,7 @@ function prepareinput() {
             if (e.key == "Enter") {
                 // strategy 1: reads the entered command after pressing "Enter"
                 read();
+                // handle_sentence(input.value);
             }
         });
     }
@@ -56,9 +57,9 @@ function read() {
         handle_sentence(newcommand.value);
     }
 }
-var output = "";
 function handle_sentence(cmd) {
     var repl_output = document.getElementsByClassName("output")[0];
+    var output = "";
     // User Story 1
     if (cmd == "mode") {
         if (current_mode == "Brief") {
@@ -140,4 +141,7 @@ function handle_sentence(cmd) {
         repl_output.innerHTML += '<p> ERROR: Illegal Mode </p>';
     }
 }
-export { handleButtonClick, handle_sentence };
+function getOutput() {
+    return document.getElementsByClassName("output");
+}
+export { handleButtonClick, handle_sentence, getOutput };

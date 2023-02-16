@@ -23,8 +23,8 @@ test('is 1 + 1 = 2?', () => {
 //   expect(main.getClickCount()).toBe(2)
 // })
 
-test('handleSentence', () => {
-    main.handle_sentence("mode")
-    expect(main.output)
-}
-)
+// test('handleSentence', () => {
+//     main.handle_sentence("mode")
+//     expect(main.output)
+// }
+// )

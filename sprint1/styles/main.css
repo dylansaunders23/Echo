@@ -38,18 +38,9 @@ BODY{
     font-size: 35px;
     font-weight: smaller;
 }
-.repl-button{
-    margin: auto; 
-    display: block;
-}
 .enter-command{
     margin: auto;
     display: block;
-}
-.history{
-    margin: auto;
-    font-size: 15px;
-    font-weight: smaller;
 }
 .output{
     margin: auto;

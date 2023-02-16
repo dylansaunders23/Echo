@@ -57,6 +57,61 @@ function read() {
         handle_sentence(newcommand.value);
     }
 }
+function get_file(f) {
+    switch (f) {
+        case mockData.favoriteStudents:
+            return mockData.favorite_output;
+        case mockData.noHeaderStudents:
+            return mockData.noHeadStu_output;
+        case mockData.multipleStudents:
+            return mockData.multiStu_output;
+        case mockData.multipleStudentsHeaders:
+            return mockData.multiStuHead_output;
+        case mockData.emptyFile:
+            return mockData.empty_output;
+        case mockData.emptyWithHeaders:
+            return mockData.headEmpty_output;
+    }
+}
+function search_file(f, value) {
+    switch (f) {
+        case mockData.favoriteStudents:
+            if (value == "Julia") {
+                return mockData.favorite_Julia;
+            }
+            else if (value == "CS") {
+                return mockData.favorite_CS;
+            }
+            else {
+                return "Value not found.";
+            }
+        case mockData.noHeaderStudents:
+            if (value == "Dylan") {
+                return mockData.favorite_Dylan;
+            }
+            else {
+                return "Value not found.";
+            }
+        case mockData.multipleStudents:
+            if (value == "Dylan") {
+                return mockData.multi_Dylan;
+            }
+            else {
+                return "Value not found.";
+            }
+        case mockData.multipleStudentsHeaders:
+            if (value == 'Arnie') {
+                return mockData.favorite_Arnie;
+            }
+            else {
+                return "Value not found.";
+            }
+        case mockData.emptyFile:
+            return mockData.favorite_Arnie;
+        case mockData.emptyWithHeaders:
+            return mockData.favorite_Arnie;
+    }
+}
 function handle_sentence(cmd) {
     var repl_output = document.getElementsByClassName("output")[0];
     var output = "";
@@ -94,15 +149,16 @@ function handle_sentence(cmd) {
             output = "No CSV file stored yet.";
         }
         else {
-            if (file.hasHeaders) {
-                header += '<br><th>' + file.header + '</th></br>';
-            }
-            var r = 0;
-            while (r < file.contents.length) {
-                rows += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
-                r++;
-            }
-            output += header + rows;
+            // if (file.hasHeaders){
+            //    header += '<br><th>' + file.header + '</th></br>';
+            // }
+            // var r = 0;
+            // while (r < file.contents.length){
+            //    rows += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
+            //    r ++;
+            // }
+            output = '<p>' + get_file(file) + '</p>';
+            // output += header + rows;
         }
     } // User Story 4
     else if (cmd.substring(0, 6) == "search") {
@@ -118,11 +174,13 @@ function handle_sentence(cmd) {
                 output = "No CSV file stored yet.";
             }
             else {
-                var r = 0;
-                while (r < file.contents.length) {
-                    output += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
-                    r++;
-                }
+                //         var r = 0;
+                //         while (r < file.contents.length){
+                //             output += '<br><tr><td>' + file.contents[r] + '</td></tr>' + '</br>';
+                //             r ++;
+                //         }
+                //     }
+                output = '<p>' + search_file(file, value);
             }
         }
     }

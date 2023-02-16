@@ -25,6 +25,6 @@ test('is 1 + 1 = 2?', () => {
 
 // test('handleSentence', () => {
 //     main.handle_sentence("mode")
-//     expect(main.output)
+//     expect(main.getOutput()).toBe("Mode switched to Verbose.")
 // }
 // )

@@ -47,6 +47,10 @@ function handleButtonClick(event: MouseEvent) {
     read();
 }
 
+function getCSV(){
+    return file;
+}
+
 // deals with the input command
 function read(){
     const newcommand = document.getElementsByClassName("repl-command-box")[0];
@@ -205,5 +209,5 @@ let history: Array<String> [];
 function clearHistory(){
     history = [];
 }
-export { prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory };
+export {getCSV, prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory};
 

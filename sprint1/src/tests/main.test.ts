@@ -45,7 +45,7 @@ const startHTML =
 let maybeInput: HTMLElement | null;
 
 beforeEach(() => {
-    main.clearHistory();
+    main.clearHistory;
     document.body.innerHTML = startHTML;
 
     const maybeInput = document.getElementsByClassName("repl-command-box")[0];
@@ -56,10 +56,10 @@ test("loading a file", () => {
         maybeInput.value = "load_file mockData/favoriteStudents.csv";
     }
 
-    main.prepareSubmitPress();
+    main.prepareSubmitPress;
 
     const favoriteStudents: csvFile = {
-      areHeaders: true,
+      hasHeaders: true,
       header: ["Name", "Year", "Concentration", "Hometown"],
       contents: [
         ["Owen", "2", "CS", "Portland"],
@@ -69,7 +69,7 @@ test("loading a file", () => {
       ],
     };
 
-    let file: csvFile | undefined = main.getCSV();
+    let file: csvFile | undefined = main.getCSV;
     if(file != undefined){
         expect(file.contents).toBe(favoriteStudents.contents);
     }

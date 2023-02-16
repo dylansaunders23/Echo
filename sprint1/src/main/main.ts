@@ -1,6 +1,5 @@
 import * as mockData from "../mockFiles/mockedJson.js"
 import { csvFile as csvFile } from "../mockFiles/mockedJson.js";
-
 // prepare entered command and submit button
 window.onload = () => {    
     prepareinput();
@@ -202,5 +201,9 @@ function handle_sentence(cmd: string){
 function getOutput(){
     return document.getElementsByClassName("output");
 }
-export { handleButtonClick, handle_sentence, getOutput };
+let history: Array<String> [];
+function clearHistory(){
+    history = [];
+}
+export { prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory };
 

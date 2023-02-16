@@ -28,3 +28,53 @@ test('is 1 + 1 = 2?', () => {
 //     expect(main.getOutput()).toBe("Mode switched to Verbose.")
 // }
 // )
+import { mockFilepaths } from "../mockFiles/mockedJson.js";
+import { csvFile } from "../mockFiles/mockedJson.js";
+import { screen } from "@testing-library/dom";
+import userEvent from '@testing-library/user-event';
+const startHTML = 
+`<div class="repl">
+      <div class="repl-history"></div>
+      <hr />
+      <div class="repl-input">
+        <input type="text" class="repl-command-box" />
+        <button type="button" class="submit-button">submit</button>
+      </div>
+</div>`;
+
+let maybeInput: HTMLElement | null;
+
+beforeEach(() => {
+    main.clearHistory();
+    document.body.innerHTML = startHTML;
+
+    const maybeInput = document.getElementsByClassName("repl-command-box")[0];
+})
+
+test("loading a file", () => {
+    if(maybeInput instanceof HTMLInputElement){
+        maybeInput.value = "load_file mockData/favoriteStudents.csv";
+    }
+
+    main.prepareSubmitPress();
+
+    const favoriteStudents: csvFile = {
+      areHeaders: true,
+      header: ["Name", "Year", "Concentration", "Hometown"],
+      contents: [
+        ["Owen", "2", "CS", "Portland"],
+        ["Caroline", "2", "APMA-CS", "Rockville"],
+        ["Cannon", "2", "Classics", "Concord"],
+        ["Emma", "4", "Acting", "London"],
+      ],
+    };
+
+    let file: csvFile | undefined = main.getCSV();
+    if(file != undefined){
+        expect(file.contents).toBe(favoriteStudents.contents);
+    }
+    
+})
+
+
+export {};

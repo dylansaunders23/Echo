@@ -44,6 +44,9 @@ var file;
 function handleButtonClick(event) {
     read();
 }
+function getCSV() {
+    return file;
+}
 // deals with the input command
 function read() {
     var newcommand = document.getElementsByClassName("repl-command-box")[0];
@@ -202,4 +205,8 @@ function handle_sentence(cmd) {
 function getOutput() {
     return document.getElementsByClassName("output");
 }
-export { handleButtonClick, handle_sentence, getOutput };
+var history;
+function clearHistory() {
+    history = [];
+}
+export { getCSV, prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory };

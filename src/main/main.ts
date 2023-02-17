@@ -48,13 +48,6 @@ function handleButtonClick(event: MouseEvent) {
     read();
 }
 
-function getCSV(){
-    return file;
-}
-
-function getMode(){
-    return current_mode;
-}
 // deals with the input command
 function read(){
     const newcommand = document.getElementsByClassName("repl-command-box")[0];
@@ -225,14 +218,10 @@ function handle_sentence(cmd: string){
         repl_output.innerHTML += '<p> ERROR: Illegal Mode </p><hr>';
     }
 }
-function getOutput(){
-    return result;
-}
-
 
 function clearHistory(){
     file = undefined;
 }
 export{current_mode, result, file};
-export {getCSV, getMode, prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory};
+export { prepareSubmitPress, handleButtonClick, handle_sentence,  clearHistory};
 

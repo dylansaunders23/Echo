@@ -70,7 +70,7 @@ var emptyFile = {
     header: [],
     contents: [[]],
 };
-var empty_output = "";
+var empty_output = "(This CSV file is empty)";
 var emptyWithHeaders = {
     hasHeaders: true,
     header: ["Name", "Year", "Concentration", "Hometown"],

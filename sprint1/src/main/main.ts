@@ -1,3 +1,4 @@
+import { OutputFileType } from "typescript";
 import * as mockData from "../mockFiles/mockedJson.js"
 import { csvFile as csvFile } from "../mockFiles/mockedJson.js";
 // prepare entered command and submit button
@@ -51,6 +52,9 @@ function getCSV(){
     return file;
 }
 
+function getMode(){
+    return current_mode;
+}
 // deals with the input command
 function read(){
     const newcommand = document.getElementsByClassName("repl-command-box")[0];
@@ -116,42 +120,54 @@ function search_file(f: csvFile, value: String){
             return mockData.favorite_Arnie;
     }
 }
-
+let result = ""; 
 function handle_sentence(cmd: string){
     let repl_output = document.getElementsByClassName("output")[0];
     var output = "";
     // User Story 1
-    if (cmd == "mode"){
+    if (cmd.toLowerCase() == "mode"){
+        // if (cmd.split(" ").length != 1){
+        //     output = "Invalid number of inputs";
+        //     result = output;
+        // }
         if (current_mode == "Brief"){
             current_mode = "Verbose";
-            output = "Mode switched to Verbose. ";
+            result = "Mode switched to Verbose.";
         }
         else if (current_mode == "Verbose"){
             current_mode = "Brief";
-            output =  "Mode switched to Brief. ";
+            result =  "Mode switched to Brief.";
         }
     }// User Story 2
-    else if (cmd.substring(0, 9) == "load_file"){
+    else if (cmd.toLowerCase().substring(0, 9) == "load_file"){
         var filename = cmd.split(" ");
         if (filename.length != 2) {
            output = "Invalid number of inputs";
+           result = output;
         }
         else{
             file = mockData.mockFilepaths.get(filename[1]);
             if (file == undefined) {
                 output = "Filepath not found";
+                result = output;
             }
             else{
                 output = "CSV file loaded successfully";
+                result = output;
             }
         }
     } // User Story 3
-    else if(cmd == "view"){
+    else if(cmd.toLowerCase() == "view"){
         var output = "";
         var header = "";
         var rows = "";
+        // if (cmd.split(" ").length != 1){
+        //     output = "Invalid number of inputs";
+        //     result = output;
+        // }
         if (file == undefined){
             output = "No CSV file stored yet.";
+            result = output;
         }
         else{
             // if (file.hasHeaders){
@@ -163,20 +179,23 @@ function handle_sentence(cmd: string){
             //    r ++;
             // }
             output = '<p>' + get_file(file) + '</p>';
+            result = output;
             // output += header + rows;
         }
     }// User Story 4
-    else if (cmd.substring(0, 6) == "search"){
+    else if (cmd.toLowerCase().substring(0, 6) == "search"){
         var input = cmd.split(" ");
         var output = "";
         if (input.length != 3) {
            output = "Invalid number of inputs";
+           result = output;
         }
         else{
             var column = input[1];
             var value = input[2];
             if (file == undefined){
                 output = "No CSV file stored yet.";
+                result = output;
                 }else{
         //         var r = 0;
         //         while (r < file.contents.length){
@@ -184,30 +203,36 @@ function handle_sentence(cmd: string){
         //             r ++;
         //         }
         //     }
-                output = '<p>' + search_file(file, value);
+                output = '<p>' + search_file(file, value) + '</p>';
+                result = output;
             }
         }
     }else {
         output = "Invalid Input";
+        result = output;
     }
     // Output either Brief or Verbose
     if (current_mode == "Brief"){
-        repl_output.innerHTML += '<p>' + output + '</p>';
+        repl_output.innerHTML += '<p> ' + result +'</p>';
+        repl_output.innerHTML += '<hr>';
     }
     else if (current_mode == "Verbose"){
         repl_output.innerHTML += '<p> Command: ' + cmd + '</p>';
-        repl_output.innerHTML += '<p> Output: ' + output + '</p>';
+        repl_output.innerHTML += '<p> Output: ' + result + '</p>';
+        repl_output.innerHTML += '<hr>';
     }
     else{
-        repl_output.innerHTML += '<p> ERROR: Illegal Mode </p>';
+        repl_output.innerHTML += '<p> ERROR: Illegal Mode </p><hr>';
     }
 }
 function getOutput(){
-    return document.getElementsByClassName("output");
+    return result;
 }
-let history: Array<String> [];
+
+
 function clearHistory(){
-    history = [];
+    file = undefined;
 }
-export {getCSV, prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory};
+export{current_mode, result, file};
+export {getCSV, getMode, prepareSubmitPress, handleButtonClick, handle_sentence, getOutput, clearHistory};
 

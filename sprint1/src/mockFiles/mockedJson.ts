@@ -89,7 +89,7 @@ const emptyFile: csvFile = {
   contents: [[]],
 }
 
-var empty_output = "";
+var empty_output = "(This CSV file is empty)";
 
 const emptyWithHeaders: csvFile = {
   hasHeaders: true,

@@ -62,10 +62,7 @@
 // export those for testing
 import * as main from '../main/main.js';
 import * as mockData from "../mockFiles/mockedJson.js"
-import { mockFilepaths } from "../mockFiles/mockedJson.js";
-import { csvFile } from "../mockFiles/mockedJson.js";
-import { screen } from "@testing-library/dom";
-import userEvent from '@testing-library/user-event';
+import * as mockSearched from "../mockFiles/mockedSearched.js";
 // starting html webpage
 const startHTML = `<html lang="en">
 <head>
@@ -284,7 +281,7 @@ test("search - column index", () => {
   main.handle_sentence("load_file mockData/favoriteStudents.csv")
   main.handle_sentence("search 0 Julia");
   expect(main.file).toBe(mockData.favoriteStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_Julia + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_Julia + '</p>');
   expect(main.current_mode).toBe("Brief");
 })
 
@@ -295,7 +292,7 @@ test("search - column index", () => {
   main.handle_sentence("load_file mockData/favoriteStudents.csv")
   main.handle_sentence("search Name Julia");
   expect(main.file).toBe(mockData.favoriteStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_Julia + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_Julia + '</p>');
   expect(main.current_mode).toBe("Brief");
 })
 // (7). Test when the value is present once in the csv file
@@ -305,7 +302,7 @@ test("search - present once", () => {
   main.handle_sentence("load_file mockData/noHeaderStudents.csv")
   main.handle_sentence("search Name Dylan");
   expect(main.file).toBe(mockData.noHeaderStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_Dylan + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_Dylan + '</p>');
   expect(main.current_mode).toBe("Brief");
 })
 // (8). Test when the value is present multiple times in the csv files
@@ -315,7 +312,7 @@ test("search - present multiple", () => {
   main.handle_sentence("load_file mockData/multipleStudents.csv")
   main.handle_sentence("search 0 Dylan");
   expect(main.file).toBe(mockData.multipleStudents);
-  expect(main.result).toBe('<p>' + mockData.multi_Dylan + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.multi_Dylan + '</p>');
   expect(main.current_mode).toBe("Brief");
 })
 // (9). Test when the value is present as a substring in the table entries
@@ -325,7 +322,7 @@ test("search - present substring", () => {
   main.handle_sentence("load_file mockData/favoriteStudents.csv")
   main.handle_sentence("search 2 CS");
   expect(main.file).toBe(mockData.favoriteStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_CS + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_CS + '</p>');
   expect(main.current_mode).toBe("Brief");
 })
 // (10). Test when the value is absent from the csv file
@@ -460,7 +457,7 @@ test("search + load_file + search", () => {
   main.handle_sentence("load_file mockData/favoriteStudents.csv")
   main.handle_sentence("search Concentration CS")
   expect(main.file).toBe(mockData.favoriteStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_CS + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_CS + '</p>');
   expect(main.current_mode).toBe("Verbose");
 })
 // (13). "mode" + "load_file" + "view"
@@ -482,7 +479,7 @@ test("mode + load_file + search", () => {
   main.handle_sentence("load_file mockData/favoriteStudents.csv")
   main.handle_sentence("search Concentration CS")
   expect(main.file).toBe(mockData.favoriteStudents);
-  expect(main.result).toBe('<p>' + mockData.favorite_CS + '</p>');
+  expect(main.result).toBe('<p>' + mockSearched.favorite_CS + '</p>');
   expect(main.current_mode).toBe("Verbose");
 })
 // (15). "mode" + "view" + "search"
@@ -559,3 +556,4 @@ test("edge case - wrong case in filepath", () => {
 })
 
 export {};
+  

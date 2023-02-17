@@ -1,5 +1,6 @@
-import { OutputFileType } from "typescript";
 import * as mockData from "../mockFiles/mockedJson.js"
+import * as mockParsed from "../mockFiles/mockedParsed.js"
+import * as mockSearched from "../mockFiles/mockedSearched.js"
 import { csvFile as csvFile } from "../mockFiles/mockedJson.js";
 // prepare entered command and submit button
 window.onload = () => {    
@@ -21,7 +22,6 @@ function prepareinput(){
             if (e.key == "Enter"){
                 // strategy 1: reads the entered command after pressing "Enter"
                 read();
-                // handle_sentence(input.value);
             }
         });
     }
@@ -62,55 +62,56 @@ function read(){
     }
 }
 
+// mocked parse
 function get_file(f: csvFile){
     switch (f){
         case mockData.favoriteStudents: 
-            return mockData.favorite_output;
+            return mockParsed.favorite_output;
         case mockData.noHeaderStudents:
-            return mockData.noHeadStu_output;
+            return mockParsed.noHeadStu_output;
         case mockData.multipleStudents:
-            return mockData.multiStu_output;
+            return mockParsed.multiStu_output;
         case mockData.multipleStudentsHeaders:
-            return  mockData.multiStuHead_output;
+            return mockParsed.multiStuHead_output;
         case mockData.emptyFile:
-            return mockData.empty_output;
+            return mockParsed.empty_output;
         case mockData.emptyWithHeaders:
-            return mockData.headEmpty_output;
+            return mockParsed.headEmpty_output;
     }
 }
-
+// mocked search
 function search_file(f: csvFile, value: String){
     switch (f){
         case mockData.favoriteStudents: 
             if (value == "Julia"){
-                return mockData.favorite_Julia;
+                return mockSearched.favorite_Julia;
             }else if(value == "CS"){
-                return mockData.favorite_CS;
+                return mockSearched.favorite_CS;
             }else{
                 return "Value not found.";
             }
         case mockData.noHeaderStudents:
             if (value == "Dylan"){
-                return mockData.favorite_Dylan;
+                return mockSearched.favorite_Dylan;
             }else{
                 return "Value not found.";
             }
         case mockData.multipleStudents:
             if (value == "Dylan"){
-                return mockData.multi_Dylan;
+                return mockSearched.multi_Dylan;
             }else{
                 return "Value not found.";
             }
         case mockData.multipleStudentsHeaders:
             if (value == 'Arnie'){
-                return mockData.favorite_Arnie;
+                return mockSearched.favorite_Arnie;
             }else{
                 return "Value not found.";
             }
         case mockData.emptyFile:
-            return mockData.favorite_Arnie;
+            return mockSearched.favorite_Arnie;
         case mockData.emptyWithHeaders:
-            return mockData.favorite_Arnie;
+            return mockSearched.favorite_Arnie;
     }
 }
 let result = ""; 
@@ -218,10 +219,11 @@ function handle_sentence(cmd: string){
         repl_output.innerHTML += '<p> ERROR: Illegal Mode </p><hr>';
     }
 }
-
+// clean file to default
 function clearHistory(){
     file = undefined;
 }
+// export variables and functions
 export{current_mode, result, file};
 export { prepareSubmitPress, handleButtonClick, handle_sentence,  clearHistory};
 

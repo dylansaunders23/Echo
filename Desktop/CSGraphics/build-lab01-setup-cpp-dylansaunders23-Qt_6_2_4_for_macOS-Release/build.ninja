@@ -1,0 +1,144 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: lab01
+# Configurations: Release
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Release
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release/
+# =============================================================================
+# Object build statements for EXECUTABLE target lab01
+
+
+#############################################
+# Order-only phony target for lab01
+
+build cmake_object_order_depends_target_lab01: phony || CMakeFiles/lab01.dir
+
+build CMakeFiles/lab01.dir/src/main.cpp.o: CXX_COMPILER__lab01_Release /Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23/src/main.cpp || cmake_object_order_depends_target_lab01
+  DEP_FILE = CMakeFiles/lab01.dir/src/main.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++20
+  INCLUDES = -I/Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release -I/Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23 -I/Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23/src
+  OBJECT_DIR = CMakeFiles/lab01.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab01.dir/src
+  TARGET_COMPILE_PDB = CMakeFiles/lab01.dir/
+  TARGET_PDB = lab01.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lab01
+
+
+#############################################
+# Link the executable lab01
+
+build lab01: CXX_EXECUTABLE_LINKER__lab01_Release CMakeFiles/lab01.dir/src/main.cpp.o
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/lab01.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/lab01.dir/
+  TARGET_FILE = lab01
+  TARGET_PDB = lab01.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release && /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/bin/ccmake -S/Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23 -B/Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release && /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23 -B/Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/dylansaunders/Desktop/CSGraphics/build-lab01-setup-cpp-dylansaunders23-Qt_6_2_4_for_macOS-Release
+
+build all: phony lab01
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/Qt$ Creator.app/Contents/Resources/package-manager/auto-setup.cmake /Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23/CMakeLists.txt /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCCompilerABI.c /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeNinjaFindMake.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystem.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin-Determine-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/Qt$ Creator.app/Contents/Resources/package-manager/auto-setup.cmake /Users/dylansaunders/Desktop/CSGraphics/lab01-setup-cpp-dylansaunders23/CMakeLists.txt /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCCompilerABI.c /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeNinjaFindMake.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystem.cmake.in /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin-Determine-CXX.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

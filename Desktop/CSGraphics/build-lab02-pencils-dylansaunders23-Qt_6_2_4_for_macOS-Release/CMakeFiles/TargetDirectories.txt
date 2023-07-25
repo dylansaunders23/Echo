@@ -1,0 +1,5 @@
+/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Release/CMakeFiles/lab02.dir
+/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Release/CMakeFiles/edit_cache.dir
+/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Release/CMakeFiles/rebuild_cache.dir
+/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Release/CMakeFiles/lab02_autogen_timestamp_deps.dir
+/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Release/CMakeFiles/lab02_autogen.dir

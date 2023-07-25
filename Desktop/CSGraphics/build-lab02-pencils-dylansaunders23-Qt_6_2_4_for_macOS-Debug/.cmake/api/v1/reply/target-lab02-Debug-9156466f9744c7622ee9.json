@@ -1,0 +1,531 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "lab02"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"find_dependency",
+			"_qt_internal_find_dependencies",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6/Qt6Config.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"/Users/dylansaunders/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.23/Modules/CMakeFindDependencyMacro.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"/Users/dylansaunders/Qt/6.2.4/macos/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"file" : 3,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 209,
+				"parent" : 3
+			},
+			{
+				"file" : 2,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 53,
+				"parent" : 5
+			},
+			{
+				"file" : 1,
+				"parent" : 6
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 56,
+				"parent" : 7
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 40,
+				"parent" : 5
+			},
+			{
+				"file" : 8,
+				"parent" : 9
+			},
+			{
+				"command" : 5,
+				"file" : 8,
+				"line" : 96,
+				"parent" : 10
+			},
+			{
+				"command" : 4,
+				"file" : 7,
+				"line" : 14,
+				"parent" : 11
+			},
+			{
+				"command" : 3,
+				"file" : 6,
+				"line" : 47,
+				"parent" : 12
+			},
+			{
+				"file" : 5,
+				"parent" : 13
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 53,
+				"parent" : 14
+			},
+			{
+				"file" : 4,
+				"parent" : 15
+			},
+			{
+				"command" : 1,
+				"file" : 4,
+				"line" : 56,
+				"parent" : 16
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"file" : 3,
+				"parent" : 18
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 209,
+				"parent" : 19
+			},
+			{
+				"file" : 10,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 53,
+				"parent" : 21
+			},
+			{
+				"file" : 9,
+				"parent" : 22
+			},
+			{
+				"command" : 1,
+				"file" : 9,
+				"line" : 56,
+				"parent" : 23
+			},
+			{
+				"command" : 2,
+				"file" : 10,
+				"line" : 50,
+				"parent" : 21
+			},
+			{
+				"file" : 11,
+				"parent" : 25
+			},
+			{
+				"command" : 1,
+				"file" : 11,
+				"line" : 57,
+				"parent" : 26
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 50,
+				"parent" : 14
+			},
+			{
+				"file" : 12,
+				"parent" : 28
+			},
+			{
+				"command" : 1,
+				"file" : 12,
+				"line" : 57,
+				"parent" : 29
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-Wno-deprecated-volatile -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
+				},
+				{
+					"fragment" : "-std=gnu++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 31,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 31,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Debug"
+				},
+				{
+					"path" : "/Users/dylansaunders/Desktop/CSGraphics/lab02-pencils-dylansaunders23"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Debug/lab02_autogen/include"
+				},
+				{
+					"backtrace" : 32,
+					"path" : "/Users/dylansaunders/Desktop/CSGraphics/lab02-pencils-dylansaunders23/src"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/include"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtWidgets.framework"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtWidgets.framework/Headers"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtGui.framework"
+				},
+				{
+					"backtrace" : 31,
+					"isSystem" : true,
+					"path" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtGui.framework/Headers"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					31,
+					31
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "lab02_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "lab02_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "lab02::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-Wno-deprecated-volatile -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/Users/dylansaunders/Qt/6.2.4/macos/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtWidgets.framework/Versions/A/QtWidgets",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtGui.framework/Versions/A/QtGui",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 24,
+				"fragment" : "/Users/dylansaunders/Qt/6.2.4/macos/lib/QtCore.framework/Versions/A/QtCore",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-framework DiskArbitration",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 27,
+				"fragment" : "-framework IOKit",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-framework",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "OpenGL",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-framework",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "AGL",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "-framework AppKit",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "-framework ImageIO",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 30,
+				"fragment" : "-framework Metal",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "lab02",
+	"nameOnDisk" : "lab02",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				11
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				12
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Debug/lab02_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/mainwindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ui/supportcanvas2d.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ui/colorcanvas.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ui/graycanvas.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ui/supportcanvas2d.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ui/colorcanvas.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/ui/graycanvas.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/RGBA.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Debug/lab02_autogen/timestamp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/dylansaunders/Desktop/CSGraphics/build-lab02-pencils-dylansaunders23-Qt_6_2_4_for_macOS-Debug/lab02_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "EXECUTABLE"
+}
